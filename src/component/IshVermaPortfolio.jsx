@@ -195,15 +195,15 @@ function NavLink({ label, section, active, onClick }) {
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about");
-  const sectionRefs = {
-    about: useRef(null),
-    experience: useRef(null),
-    projects: useRef(null),
-    skills: useRef(null),
-  };
+  const sectionRefs = useRef({
+  about: null,
+  experience: null,
+  projects: null,
+  skills: null,
+});
 
   const scrollTo = (section) => {
-    sectionRefs[section]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  sectionRefs.current[section]?.scrollIntoView({ behavior: "smooth", block: "start" });
     setActiveSection(section);
   };
 
@@ -214,9 +214,12 @@ export default function Portfolio() {
       },
       { threshold: 0.3 }
     );
-    Object.entries(sectionRefs).forEach(([key, ref]) => {
-      if (ref.current) { ref.current.dataset.section = key; observer.observe(ref.current); }
-    });
+    Object.entries(sectionRefs.current).forEach(([key, ref]) => {
+  if (ref) {
+    ref.dataset.section = key;
+    observer.observe(ref);
+  }
+});
     return () => observer.disconnect();
   }, []);
 
@@ -296,7 +299,7 @@ export default function Portfolio() {
         </nav>
 
         {/* HERO */}
-        <section ref={sectionRefs.about} className="grid-bg" style={{ padding: "100px 40px 80px", maxWidth: 960, margin: "0 auto" }}>
+        <section ref={(el) => (sectionRefs.current.about = el)} className="grid-bg" style={{ padding: "100px 40px 80px", maxWidth: 960, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: 16, marginBottom: 12 }}>
             <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: ROSE, marginTop: 8 }}>01 /</span>
             <div>
@@ -395,7 +398,7 @@ export default function Portfolio() {
         </section>
 
         {/* PROJECTS */}
-        <section ref={sectionRefs.projects} style={{ padding: "80px 40px", maxWidth: 960, margin: "0 auto", background: `${SURFACE}88` }}>
+        <section ref={(el) => (sectionRefs.current.projects = el)} style={{ padding: "80px 40px", maxWidth: 960, margin: "0 auto", background: `${SURFACE}88` }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 48 }}>
             <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: ROSE }}>03 /</span>
             <h2 style={{
@@ -430,7 +433,7 @@ export default function Portfolio() {
         </section>
 
         {/* SKILLS */}
-        <section ref={sectionRefs.skills} style={{ padding: "80px 40px", maxWidth: 960, margin: "0 auto" }}>
+        <section ref={(el) => (sectionRefs.current.skills = el)} style={{ padding: "80px 40px", maxWidth: 960, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 48 }}>
             <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: ROSE }}>04 /</span>
             <h2 style={{
