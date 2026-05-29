@@ -290,12 +290,24 @@ export default function Portfolio() {
               <NavLink key={s} label={s} section={s} active={activeSection === s} onClick={scrollTo} />
             ))}
           </div>
-          <a href="mailto:isha.verma0125@gmail.com" style={{
-            fontFamily: "'Space Mono', monospace", fontSize: 11,
-            color: INK, background: CYAN, padding: "6px 14px",
-            letterSpacing: "0.08em", textTransform: "uppercase",
-            textDecoration: "none", fontWeight: 700,
-          }}>Contact</a>
+          <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=isha.verma0125@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 11,
+    color: INK,
+    background: CYAN,
+    padding: "6px 14px",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    textDecoration: "none",
+    fontWeight: 700,
+  }}
+>
+  Contact
+</a>
         </nav>
 
         {/* HERO */}
@@ -330,9 +342,9 @@ export default function Portfolio() {
               ))}
             </div>
             <div style={{ display: "flex", gap: 20, marginTop: 28, alignItems: "center" }}>
-              <a href="https://github.com" style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: CYAN, textDecoration: "none", letterSpacing: "0.08em" }}>GitHub ↗</a>
-              <a href="https://linkedin.com" style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: CYAN, textDecoration: "none", letterSpacing: "0.08em" }}>LinkedIn ↗</a>
-              <a href="https://leetcode.com" style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: CYAN, textDecoration: "none", letterSpacing: "0.08em" }}>LeetCode ↗</a>
+              <a href="https://github.com/IsHa2507" style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: CYAN, textDecoration: "none", letterSpacing: "0.08em" }}>GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/isha-verma-401144289/" style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: CYAN, textDecoration: "none", letterSpacing: "0.08em" }}>LinkedIn ↗</a>
+              <a href="https://leetcode.com/u/isha2027/" style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: CYAN, textDecoration: "none", letterSpacing: "0.08em" }}>LeetCode ↗</a>
             </div>
           </div>
 
@@ -456,11 +468,22 @@ export default function Portfolio() {
           display: "flex", justifyContent: "space-between", alignItems: "center",
         }}>
           <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: DIM }}>
-            <span style={{ color: CYAN }}>©</span> 2026 Isha Verma
+            <span style={{ color: CYAN }}>©</span> Isha Verma
           </span>
           <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 10, color: MUTED }}>IGDTUW · CS + AI · Delhi</span>
-          <a href="mailto:isha.verma0125@gmail.com" style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: CYAN, textDecoration: "none" }}>isha.verma0125@gmail.com</a>
-        </footer>
+<a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=isha.verma0125@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 11,
+    color: CYAN,
+    textDecoration: "none",
+  }}
+>
+  isha.verma0125@gmail.com
+</a>        </footer>
       </div>
     </>
   );
