@@ -221,7 +221,7 @@ export default function Portfolio() {
   }
 });
     return () => observer.disconnect();
-  }, []);
+  }, [sectionRefs]);
 
   return (
     <>
